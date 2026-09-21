@@ -57,8 +57,8 @@
 
     <rect x="1224" y="300" width="224" height="176" rx="12" class="card"/>
     <text x="1252" y="340" class="mono label">05 · DONE</text>
-    <circle cx="1378" cy="420" r="17" fill="#3A2721" stroke="#FF6A3D" stroke-width="3"/>
-    <path d="M1369 420l7 7 13-16" fill="none" stroke="#FF6A3D" stroke-width="3"/>
+    <circle cx="1280" cy="420" r="17" fill="#3A2721" stroke="#FF6A3D" stroke-width="3"/>
+    <path d="M1271 420l7 7 13-16" fill="none" stroke="#FF6A3D" stroke-width="3"/>
 
     <path d="M312 388H372" class="rule"/>
     <path d="M596 388H656" class="rule"/>
