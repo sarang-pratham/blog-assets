@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 820" role="img" aria-labelledby="title desc">
+  <title id="title">Jev’s typed decision workflow</title>
+  <desc id="desc">A diagram showing structured state and typed questions entering Jev, which returns a choice, score, or noul with confidence that software can route into action or review.</desc>
+  <defs>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="#252C33" stroke-width="1"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10Z" fill="#7B8791"/>
+    </marker>
+    <marker id="arrow-accent" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10Z" fill="#FF6A3D"/>
+    </marker>
+    <style>
+      .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #E7EBEE; }
+      .mono { font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; fill: #8E9AA4; letter-spacing: .04em; }
+      .eyebrow { font-size: 18px; font-weight: 700; letter-spacing: .16em; }
+      .title { font-size: 54px; font-weight: 680; letter-spacing: -.045em; }
+      .subtitle { font-size: 22px; fill: #8E9AA4; }
+      .label { font-size: 16px; font-weight: 700; letter-spacing: .1em; }
+      .body { font-size: 19px; }
+      .small { font-size: 16px; }
+      .tiny { font-size: 14px; }
+      .card { fill: #151A20; stroke: #37424B; stroke-width: 2; }
+      .card-soft { fill: #1E252C; stroke: #37424B; stroke-width: 2; }
+      .rule { stroke: #7B8791; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+      .rule-accent { stroke: #FF6A3D; stroke-width: 3; fill: none; marker-end: url(#arrow-accent); }
+    </style>
+  </defs>
+
+  <rect width="1600" height="820" fill="#0E1216"/>
+  <rect x="32" y="32" width="1536" height="756" fill="url(#grid)" opacity=".48"/>
+
+  <g class="sans" transform="translate(0,-120)">
+
+    <!-- Inputs -->
+    <rect x="88" y="296" width="292" height="224" rx="12" class="card"/>
+    <text x="118" y="336" class="mono label">STATE</text>
+    <rect x="118" y="420" width="226" height="52" rx="7" fill="#242C33"/>
+    <text x="132" y="442" class="mono tiny">window: Checkout</text>
+    <text x="132" y="461" class="mono tiny">focused: email</text>
+
+    <rect x="88" y="548" width="292" height="166" rx="12" class="card-soft"/>
+    <text x="118" y="588" class="mono label">QUESTIONS</text>
+    <text x="118" y="642" class="mono tiny">operation · target</text>
+
+    <path d="M380 408H510" class="rule"/>
+    <path d="M380 630H438V442H510" class="rule"/>
+
+    <!-- Jev core: the question types live inside the model -->
+    <rect x="510" y="304" width="420" height="356" rx="16" fill="#151A20" stroke="#37424B" stroke-width="2"/>
+    <circle cx="720" cy="388" r="58" fill="#FF6A3D"/>
+    <path d="M693 393c0-18 11-32 27-32 14 0 24 10 27 22 7-9 17-14 27-14 19 0 33 16 33 37 0 23-16 39-40 39h-47c-21 0-36-14-36-32 0-9 3-16 9-20z" fill="#FFD0BE" opacity=".95"/>
+    <text x="720" y="504" text-anchor="middle" font-size="42" font-weight="760" class="sans" style="fill:#FFFFFF">JEV</text>
+
+    <rect x="548" y="556" width="104" height="60" rx="8" fill="#201813" stroke="#FF6A3D" stroke-width="2"/>
+    <text x="600" y="592" text-anchor="middle" class="mono label" style="fill:#FF9A7A">CHOICE</text>
+    <rect x="668" y="556" width="104" height="60" rx="8" fill="#202830" stroke="#37424B" stroke-width="2"/>
+    <text x="720" y="592" text-anchor="middle" class="mono label">SCORE</text>
+    <rect x="788" y="556" width="104" height="60" rx="8" fill="#202830" stroke="#37424B" stroke-width="2"/>
+    <text x="840" y="592" text-anchor="middle" class="mono label">NOUL</text>
+
+    <!-- Jev emits one decision to policy -->
+    <path d="M930 482H1170" class="rule-accent"/>
+    <rect x="1170" y="400" width="280" height="164" rx="12" class="card"/>
+    <text x="1202" y="440" class="mono label">POLICY</text>
+    <text x="1202" y="479" class="body">thresholds</text>
+    <path d="M1202 530h152" stroke="#FF6A3D" stroke-width="4"/>
+    <circle cx="1354" cy="530" r="5" fill="#FF6A3D"/>
+
+    <!-- Separate downstream branches -->
+    <path d="M1240 564V606H1155V640" class="rule"/>
+    <rect x="1030" y="640" width="250" height="90" rx="12" class="card-soft"/>
+    <text x="1062" y="692" class="mono label">ACT</text>
+    <circle cx="1226" cy="684" r="18" fill="#3A2721" stroke="#FF6A3D" stroke-width="3"/>
+    <path d="M1217 684l7 7 13-16" fill="none" stroke="#FF6A3D" stroke-width="3"/>
+
+    <path d="M1380 564V606H1455V640" class="rule-accent"/>
+    <rect x="1330" y="640" width="250" height="90" rx="12" fill="#201813" stroke="#FF6A3D" stroke-width="2"/>
+    <text x="1362" y="692" class="mono label" style="fill:#FF9A7A">REVIEW</text>
+  </g>
+</svg>

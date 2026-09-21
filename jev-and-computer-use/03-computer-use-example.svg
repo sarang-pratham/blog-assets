@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 820" role="img" aria-labelledby="title desc">
+  <title id="title">Jev computer-use example: click Search</title>
+  <desc id="desc">A computer-use example showing an Accessibility snapshot, JEV choosing a click target, fresh-state validation, execution, and verification of the changed UI.</desc>
+  <defs>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="#252C33" stroke-width="1"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10Z" fill="#7B8791"/>
+    </marker>
+    <marker id="arrow-accent" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10Z" fill="#FF6A3D"/>
+    </marker>
+    <style>
+      .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #E7EBEE; }
+      .mono { font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; fill: #8E9AA4; letter-spacing: .04em; }
+      .eyebrow { font-size: 18px; font-weight: 700; letter-spacing: .16em; }
+      .title { font-size: 54px; font-weight: 680; letter-spacing: -.045em; }
+      .subtitle { font-size: 22px; fill: #8E9AA4; }
+      .label { font-size: 16px; font-weight: 700; letter-spacing: .1em; }
+      .body { font-size: 19px; }
+      .small { font-size: 16px; }
+      .tiny { font-size: 14px; }
+      .card { fill: #151A20; stroke: #37424B; stroke-width: 2; }
+      .card-soft { fill: #1E252C; stroke: #37424B; stroke-width: 2; }
+      .rule { stroke: #7B8791; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+      .rule-accent { stroke: #FF6A3D; stroke-width: 3; fill: none; marker-end: url(#arrow-accent); }
+    </style>
+  </defs>
+
+  <rect width="1600" height="820" fill="#0E1216"/>
+  <rect x="32" y="32" width="1536" height="756" fill="url(#grid)" opacity=".48"/>
+
+  <g class="sans" transform="translate(0,-120)">
+
+    <!-- observe -->
+    <rect x="88" y="288" width="370" height="458" rx="14" class="card"/>
+    <text x="120" y="330" class="mono label">01 · OBSERVE</text>
+    <rect x="120" y="370" width="306" height="304" rx="10" fill="#151A20" stroke="#37424B" stroke-width="2"/>
+    <text x="144" y="430" class="mono tiny">application: Safari</text>
+    <text x="144" y="453" class="mono tiny">window: Search demo</text>
+    <path d="M144 474H401" stroke="#37424B" stroke-width="2"/>
+    <circle cx="155" cy="506" r="7" fill="#5B6974"/>
+    <text x="176" y="511" class="mono tiny">AXTextField</text>
+    <text x="328" y="511" class="mono tiny">search</text>
+    <circle cx="155" cy="550" r="7" fill="#3A2721"/>
+    <rect x="175" y="533" width="206" height="34" rx="5" fill="#201813" stroke="#FF6A3D" stroke-width="2"/>
+    <text x="189" y="555" class="mono tiny" style="fill:#FF9A7A">Search</text>
+    <circle cx="155" cy="604" r="7" fill="#5B6974"/>
+    <text x="176" y="609" class="mono tiny">AXLink</text>
+    <text x="328" y="609" class="mono tiny">Help</text>
+    <circle cx="155" cy="658" r="7" fill="#5B6974"/>
+    <text x="176" y="663" class="mono tiny">AXButton</text>
+    <text x="328" y="663" class="mono tiny">Cancel</text>
+    <text x="120" y="728" class="mono tiny">17 elements</text>
+
+    <!-- decision -->
+    <path d="M458 517H520V488H574" class="rule-accent"/>
+    <rect x="574" y="304" width="330" height="368" rx="16" fill="#151A20" stroke="#37424B" stroke-width="2"/>
+    <text x="608" y="348" class="mono label" style="fill:#ABB7BF">02 · DECIDE</text>
+    <text x="608" y="402" font-size="48" font-weight="760" class="sans" style="fill:#FFFFFF">JEV</text>
+    <path d="M608 425H868" stroke="#37424B" stroke-width="2"/>
+    <text x="608" y="466" class="mono tiny" style="fill:#ABB7BF">operation</text>
+    <text x="866" y="466" class="mono small" text-anchor="end" style="fill:#FFD0BE">CLICK</text>
+    <text x="608" y="514" class="mono tiny" style="fill:#ABB7BF">target</text>
+    <text x="866" y="514" class="mono small" text-anchor="end" style="fill:#FFFFFF">Search</text>
+    <text x="608" y="562" class="mono tiny" style="fill:#ABB7BF">confidence</text>
+    <text x="866" y="562" class="mono small" text-anchor="end" style="fill:#FFB199">0.94</text>
+
+    <!-- validate execute -->
+    <path d="M904 488H960V395H1014" class="rule-accent"/>
+    <rect x="1014" y="288" width="252" height="214" rx="14" class="card-soft"/>
+    <text x="1044" y="330" class="mono label">03 · VALIDATE</text>
+    <text x="1044" y="370" class="body">fresh state</text>
+    <rect x="1044" y="416" width="188" height="34" rx="7" fill="#242C33" stroke="#4A565F" stroke-width="2"/>
+    <text x="1058" y="438" class="mono tiny">matches</text>
+
+    <path d="M1140 502V584" class="rule"/>
+    <rect x="1014" y="584" width="252" height="162" rx="14" class="card"/>
+    <text x="1044" y="626" class="mono label">04 · EXECUTE</text>
+    <text x="1044" y="666" class="body">press</text>
+    <circle cx="1212" cy="710" r="18" fill="#3A2721" stroke="#FF6A3D" stroke-width="2"/>
+    <path d="M1205 710h14M1212 703v14" stroke="#FF9A7A" stroke-width="3"/>
+
+    <!-- verify -->
+    <path d="M1266 665H1290V517H1320" class="rule"/>
+    <rect x="1320" y="288" width="250" height="458" rx="14" fill="#151A20" stroke="#37424B" stroke-width="2"/>
+    <text x="1350" y="330" class="mono label" style="fill:#ABB7BF">05</text>
+    <text x="1350" y="368" class="mono label" style="fill:#ABB7BF">VERIFY</text>
+    <rect x="1350" y="410" width="190" height="170" rx="8" fill="#202830"/>
+    <rect x="1372" y="428" width="146" height="12" rx="3" fill="#5A6C77"/>
+    <rect x="1372" y="456" width="146" height="28" rx="5" fill="#3A2721"/>
+    <circle cx="1390" cy="470" r="6" fill="#FF6A3D"/>
+    <rect x="1372" y="500" width="92" height="10" rx="3" fill="#5A6C77"/>
+    <text x="1445" y="612" text-anchor="middle" class="mono tiny" style="fill:#FFB199">changed</text>
+    <circle cx="1445" cy="650" r="24" fill="#3A2721" stroke="#FF6A3D" stroke-width="3"/>
+    <path d="M1433 650l9 9 17-21" fill="none" stroke="#FF6A3D" stroke-width="4"/>
+    <text x="1445" y="704" text-anchor="middle" class="mono tiny" style="fill:#FFFFFF">DONE</text>
+
+    <!-- stale state escape hatch -->
+    <path d="M1140 288V236H650V304" fill="none" stroke="#FF6A3D" stroke-width="2.5" stroke-dasharray="8 8" marker-end="url(#arrow-accent)"/>
+    <text x="830" y="226" class="mono tiny" style="fill:#FF9A7A">changed</text>
+  </g>
+</svg>

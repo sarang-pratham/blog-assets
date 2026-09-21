@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 820" role="img" aria-labelledby="title desc">
+  <title id="title">The general-purpose agent loop</title>
+  <desc id="desc">A loop showing a general-purpose model planning, generating text or code, calling tools, observing new state, and re-planning when something changes unexpectedly.</desc>
+  <defs>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="#252C33" stroke-width="1"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10Z" fill="#7B8791"/>
+    </marker>
+    <marker id="arrow-accent" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10Z" fill="#FF6A3D"/>
+    </marker>
+    <style>
+      .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #E7EBEE; }
+      .mono { font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; fill: #8E9AA4; letter-spacing: .04em; }
+      .eyebrow { font-size: 18px; font-weight: 700; letter-spacing: .16em; }
+      .title { font-size: 54px; font-weight: 680; letter-spacing: -.045em; }
+      .subtitle { font-size: 22px; fill: #8E9AA4; }
+      .label { font-size: 16px; font-weight: 700; letter-spacing: .1em; }
+      .body { font-size: 19px; }
+      .small { font-size: 16px; }
+      .tiny { font-size: 14px; }
+      .card { fill: #151A20; stroke: #37424B; stroke-width: 2; }
+      .card-soft { fill: #1E252C; stroke: #37424B; stroke-width: 2; }
+      .rule { stroke: #7B8791; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+      .rule-accent { stroke: #FF6A3D; stroke-width: 3; fill: none; marker-end: url(#arrow-accent); }
+    </style>
+  </defs>
+
+  <rect width="1600" height="820" fill="#0E1216"/>
+  <rect x="32" y="32" width="1536" height="756" fill="url(#grid)" opacity=".48"/>
+
+  <g class="sans" transform="translate(0,-120)">
+
+    <!-- Main route -->
+    <rect x="88" y="300" width="224" height="176" rx="12" class="card-soft"/>
+    <text x="116" y="340" class="mono label">01 · PLAN</text>
+    <text x="116" y="401" class="body">goal → steps</text>
+    <path d="M116 438H280" stroke="#FF6A3D" stroke-width="4"/>
+    <circle cx="116" cy="438" r="5" fill="#FF6A3D"/>
+
+    <rect x="372" y="300" width="224" height="176" rx="12" class="card"/>
+    <text x="400" y="340" class="mono label">02 · GENERATE</text>
+    <rect x="400" y="420" width="142" height="16" rx="3" fill="#2A333B"/>
+    <rect x="400" y="450" width="92" height="8" rx="3" fill="#4A555E"/>
+
+    <rect x="656" y="300" width="224" height="176" rx="12" class="card"/>
+    <text x="684" y="340" class="mono label">03 · TOOL CALL</text>
+    <rect x="684" y="420" width="152" height="28" rx="6" fill="#3A2721" stroke="#FF6A3D" stroke-width="2"/>
+    <text x="696" y="439" class="mono tiny" style="fill:#FF9A7A">click(…)</text>
+
+    <rect x="940" y="300" width="224" height="176" rx="12" class="card-soft"/>
+    <text x="968" y="340" class="mono label">04 · OBSERVE</text>
+    <circle cx="978" cy="420" r="8" fill="#3A2721" stroke="#FF6A3D" stroke-width="2"/>
+    <text x="998" y="426" class="small">new state</text>
+
+    <rect x="1224" y="300" width="224" height="176" rx="12" class="card"/>
+    <text x="1252" y="340" class="mono label">05 · DONE</text>
+    <circle cx="1378" cy="420" r="17" fill="#3A2721" stroke="#FF6A3D" stroke-width="3"/>
+    <path d="M1369 420l7 7 13-16" fill="none" stroke="#FF6A3D" stroke-width="3"/>
+
+    <path d="M312 388H372" class="rule"/>
+    <path d="M596 388H656" class="rule"/>
+    <path d="M880 388H940" class="rule"/>
+    <path d="M1164 388H1224" class="rule"/>
+
+    <!-- Recovery branch -->
+    <path d="M1052 476V574" class="rule-accent"/>
+    <rect x="940" y="574" width="224" height="114" rx="12" fill="#201813" stroke="#FF6A3D" stroke-width="2"/>
+    <text x="968" y="612" class="mono label" style="fill:#FF9A7A">REPLAN</text>
+    <text x="968" y="648" class="body">state changed</text>
+
+    <path d="M940 631H200V476" class="rule-accent"/>
+  </g>
+</svg>
